@@ -304,9 +304,10 @@ function promptOperatedElement(element) {
 }
 
 function getElementXpath(element) {
-	// if (element.id !== '')
-		// return 'id("' + element.id + '")';
-	if (element === document.body)
+	/*if (element.id !== '')
+	*	return 'id("' + element.id + '")';
+	*/
+    if (element === document.body)
 		return element.tagName;
 
 	var ix = 0;
@@ -331,9 +332,6 @@ function hook() {
 				if (!e) {
 					var e = window.event;
 				}
-				// stepArr[n] = e.target.outerHTML;
-				// n++;
-				// var r = confirm(JSON.stringify(stepArr));
 				elem = e.target;
 				promptOperatedElement(elem);
 				finished();

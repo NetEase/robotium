@@ -1745,7 +1745,23 @@ public class Solo {
 			Log.d(config.commandLoggingTag, "clickInList("+line+", "+index+")");
 		}
 		
-		return clicker.clickInList(line, index, false, 0);
+		return clicker.clickInList(line, index, 0, false, 0);
+	}
+	
+	/**
+	 * Clicks a View with a specified resource id on the specified line in the list matching the specified index
+	 *
+	 * @param line the line where the View exists
+	 * @param index the index of the List. {@code 0} if only one is available
+	 * @param id the resource id of the View to click
+	 */
+
+	public void clickInList(int line, int index, int id) {
+		if(config.commandLogging){
+			Log.d(config.commandLoggingTag, "clickInList("+line+", "+index+", " + id +")");
+		}
+		
+		clicker.clickInList(line, index, id, false, 0);
 	}
 
 	/**
@@ -1761,7 +1777,7 @@ public class Solo {
 			Log.d(config.commandLoggingTag, "clickLongInList("+line+")");
 		}
 		
-		return clicker.clickInList(line, 0, true, 0);
+		return clicker.clickInList(line, 0, 0, true, 0);
 	}
 
 	/**
@@ -1778,7 +1794,7 @@ public class Solo {
 			Log.d(config.commandLoggingTag, "clickLongInList("+line+", "+index+")");
 		}
 		
-		return clicker.clickInList(line, index, true, 0);
+		return clicker.clickInList(line, index, 0, true, 0);
 	}
 
 	/**
@@ -1796,7 +1812,7 @@ public class Solo {
 			Log.d(config.commandLoggingTag, "clickLongInList("+line+", "+index+", "+time+")");
 		}
 		
-		return clicker.clickInList(line, index, true, time);
+		return clicker.clickInList(line, index, 0, true, time);
 	}
 	
 	
@@ -1830,7 +1846,23 @@ public class Solo {
 			Log.d(config.commandLoggingTag, "clickInRecyclerView("+itemIndex+", "+recyclerViewIndex+")");
 		}
 		
-		return clicker.clickInRecyclerView(itemIndex, recyclerViewIndex, false, 0);
+		return clicker.clickInRecyclerView(itemIndex, recyclerViewIndex, 0, false, 0);
+	}
+	
+	/**
+	 * Clicks a View with a specified resource id on the specified item index in the RecyclerView matching the specified RecyclerView index
+	 *
+	 * @param itemIndex the line where the View exists
+	 * @param recyclerViewIndex the index of the RecyclerView. {@code 0} if only one is available
+	 * @param id the resource id of the View to click
+	 */
+
+	public void clickInRecyclerView(int itemIndex, int recyclerViewIndex, int id) {
+		if(config.commandLogging){
+			Log.d(config.commandLoggingTag, "clickInRecyclerView("+itemIndex+", "+recyclerViewIndex+", " + id +")");
+		}
+		
+		clicker.clickInRecyclerView(itemIndex, recyclerViewIndex, id, false, 0);
 	}
 
 	/**
@@ -1846,7 +1878,7 @@ public class Solo {
 			Log.d(config.commandLoggingTag, "clickLongInRecycleView("+itemIndex+")");
 		}
 		
-		return clicker.clickInRecyclerView(itemIndex, 0, true, 0);
+		return clicker.clickInRecyclerView(itemIndex, 0, 0, true, 0);
 	}
 
 	/**
@@ -1863,7 +1895,7 @@ public class Solo {
 			Log.d(config.commandLoggingTag, "clickLongInRecycleView("+itemIndex+", "+recyclerViewIndex+")");
 		}
 		
-		return clicker.clickInRecyclerView(itemIndex, recyclerViewIndex, true, 0);
+		return clicker.clickInRecyclerView(itemIndex, recyclerViewIndex, 0, true, 0);
 	}
 
 	/**
@@ -1881,7 +1913,7 @@ public class Solo {
 			Log.d(config.commandLoggingTag, "clickLongInRecycleView("+itemIndex+", "+recyclerViewIndex+", "+time+")");
 		}
 		
-		return clicker.clickInRecyclerView(itemIndex, recyclerViewIndex, true, time);
+		return clicker.clickInRecyclerView(itemIndex, recyclerViewIndex, 0, true, time);
 	}
 
 	/**
